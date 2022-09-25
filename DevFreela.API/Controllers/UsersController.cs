@@ -1,23 +1,25 @@
 ﻿using DevFreela.API.Models;
+using DevFreela.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers
 {
     [Route("api/users")]
     public class UsersController : ControllerBase
     {
-        public UsersController(ExampleClass example)
-        {
 
-        }
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             return Ok();
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            List<UsersViewModel> UserList = new List<UsersViewModel>();
+            return Ok(UserList);
         }
 
         [HttpPost]
@@ -28,6 +30,12 @@ namespace DevFreela.API.Controllers
 
         [HttpPut("{id}/login")]
         public IActionResult Login(int id, [FromBody] LoginModel login)
+        {
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             return NoContent();
         }

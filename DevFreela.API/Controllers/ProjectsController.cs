@@ -1,10 +1,6 @@
 ﻿using DevFreela.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers
 {
@@ -18,6 +14,7 @@ namespace DevFreela.API.Controllers
             exampleClass.Name = "Updated at ProjectsController";
             _option = option.Value;
         }
+
         [HttpGet]
         public IActionResult Get(string query)
         {
@@ -31,7 +28,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post ([FromBody] CreateProjectModel createProject)
+        public IActionResult Post([FromBody] CreateProjectModel createProject)
         {
             return CreatedAtAction(nameof(GetById), new { id = createProject.Id }, createProject);
         }

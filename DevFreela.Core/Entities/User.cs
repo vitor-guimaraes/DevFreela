@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DevFreela.Core.Entities
 {
@@ -20,6 +17,8 @@ namespace DevFreela.Core.Entities
             OwnedProjects = new List<Project>();
             FreelanceProjects = new List<Project>();
         }
+
+
         public string FullName { get; private set; }
         public string Email { get; private set; }
         public DateTime BirthDate { get; private set; }
@@ -27,6 +26,25 @@ namespace DevFreela.Core.Entities
         public List<UserSkill> Skills { get; private set; }
         public bool Active { get; set; }
         public List<Project> OwnedProjects { get; private set; }
+
+        public void Remove()
+        {
+            if(Active == true)
+            {
+                Active = false;
+            }
+        }
+
         public List<Project> FreelanceProjects { get; private set; }
+
+        public void Update(int id, string fullName, string email, List<Project> ownedProjects, List<UserSkill> skills)
+        {
+            //Id = id;
+            FullName = fullName;
+            Email = Email;
+            OwnedProjects = ownedProjects;
+            Skills = skills;
+
+        }
     }
 }

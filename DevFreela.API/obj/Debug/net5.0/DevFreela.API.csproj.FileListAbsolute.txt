@@ -26,3 +26,9 @@ C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFr
 C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\obj\Debug\net5.0\ref\DevFreela.API.dll
 C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\obj\Debug\net5.0\DevFreela.API.pdb
 C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\obj\Debug\net5.0\DevFreela.API.genruntimeconfig.cache
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\DevFreela.Application.dll
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\DevFreela.Core.dll
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\DevFreela.Infrastructure.dll
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\DevFreela.Application.pdb
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\DevFreela.Core.pdb
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\DevFreela.Infrastructure.pdb
