@@ -16,6 +16,7 @@ namespace DevFreela.Application.Services.Implementations
         {
             _dbContext = dbContext;
         }
+
         public int Create(CreateUsersInputModel inputModel)
         {
             var user = new User(inputModel.FullName, inputModel.Email, inputModel.BirthDate);
