@@ -1,3 +1,6 @@
 
 .vs/DevFreela/v16/.suo
 .vs/DevFreela/v16/.suo
+.vs/DevFreela/v16/.suo
+*.cache
+*.props
