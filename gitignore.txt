@@ -19,3 +19,5 @@ Version.cs
 Version.h
 Version.cpp
 net5.0
+.suo
+.cache
