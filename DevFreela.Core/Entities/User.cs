@@ -18,7 +18,6 @@ namespace DevFreela.Core.Entities
             FreelanceProjects = new List<Project>();
         }
 
-
         public string FullName { get; private set; }
         public string Email { get; private set; }
         public DateTime BirthDate { get; private set; }
@@ -26,6 +25,7 @@ namespace DevFreela.Core.Entities
         public List<UserSkill> Skills { get; private set; }
         public bool Active { get; set; }
         public List<Project> OwnedProjects { get; private set; }
+        public List<ProjectComment> Comments { get; private set; }
 
         public void Remove()
         {

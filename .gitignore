@@ -5,3 +5,7 @@
 *.cache
 *.props
 *.dll
+*.dll
+*.pdb
+*.dll
+*.pdb
