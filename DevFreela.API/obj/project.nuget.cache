@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "JU863p+ii6U1eMZbYan7QWYw2eF1kFdc5V6MbBBLDJC7q7CcwhSePUdsMx3U4FH8EHZWCJxQG29TziM2GW7WAg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.API\\DevFreela.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
