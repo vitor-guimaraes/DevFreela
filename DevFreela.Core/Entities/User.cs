@@ -26,6 +26,7 @@ namespace DevFreela.Core.Entities
         public List<UserSkill> Skills { get; private set; }
         public bool Active { get; set; }
         public List<Project> OwnedProjects { get; private set; }
+        public List<ProjectComment> Comments { get; private set; }
 
         public void Remove()
         {
@@ -39,12 +40,10 @@ namespace DevFreela.Core.Entities
 
         public void Update(int id, string fullName, string email, List<Project> ownedProjects, List<UserSkill> skills)
         {
-            //Id = id;
             FullName = fullName;
             Email = Email;
             OwnedProjects = ownedProjects;
             Skills = skills;
-
         }
     }
 }
