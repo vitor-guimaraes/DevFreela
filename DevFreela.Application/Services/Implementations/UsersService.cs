@@ -23,6 +23,8 @@ namespace DevFreela.Application.Services.Implementations
 
             _dbContext.Users.Add(user);
 
+            _dbContext.SaveChanges();
+
             return user.Id;
         }
 
@@ -31,6 +33,8 @@ namespace DevFreela.Application.Services.Implementations
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
 
             user.Remove();
+
+            _dbContext.SaveChanges();
         }
 
         public List<UsersViewModel> GetAllUsers(string query)
@@ -39,6 +43,8 @@ namespace DevFreela.Application.Services.Implementations
 
             var usersViewModel = users
                 .Select(u => new UsersViewModel(u.FullName, u.Id)).ToList();
+
+            _dbContext.SaveChanges();
 
             return usersViewModel;
         }
@@ -55,6 +61,8 @@ namespace DevFreela.Application.Services.Implementations
                 user.Skills
                 );
 
+            _dbContext.SaveChanges();
+
             return usersDetailsViewModel;
         }
 
@@ -63,6 +71,8 @@ namespace DevFreela.Application.Services.Implementations
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == inputModel.Id);
 
             user.Update(inputModel.Id, inputModel.FullName, inputModel.Email, inputModel.OwnedProjects, inputModel.Skills);
+
+            _dbContext.SaveChanges();
         }
     }
 }

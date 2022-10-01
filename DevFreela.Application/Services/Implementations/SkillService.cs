@@ -24,6 +24,8 @@ namespace DevFreela.Application.Services.Implementations
                 .Select(s => new SkillViewModel(s.Id, s.Description))
                 .ToList();
 
+            _dbContext.SaveChanges();
+
             return skillsViewModel;
         }
     }
