@@ -9,6 +9,24 @@ namespace DevFreela.Core.Entities
 {
     public class Project : BaseEntity
     {
+        public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost, DateTime? startedAt, DateTime? finishedAt, string clientFullname, string freelancerFullName)
+        {
+            Title = title;
+            Description = description;
+            IdClient = idClient;
+            IdFreelancer = idFreelancer;
+            TotalCost = totalCost;
+            StartedAt = startedAt;
+            FinishedAt = finishedAt;
+            ClientFullName = clientFullname;
+            FreelancerFullname = freelancerFullName;
+
+
+            CreatedAt = DateTime.Now;
+            Status = ProjectStatusEnum.Created;
+            Comments = new List<ProjectComment>();
+        }
+
         public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost)
         {
             Title = title;
@@ -16,10 +34,6 @@ namespace DevFreela.Core.Entities
             IdClient = idClient;
             IdFreelancer = idFreelancer;
             TotalCost = totalCost;
-
-            CreatedAt = DateTime.Now;
-            Status = ProjectStatusEnum.Created;
-            Comments = new List<ProjectComment>();
         }
 
         public string Title { get; private set; }
@@ -34,6 +48,8 @@ namespace DevFreela.Core.Entities
         public List<ProjectComment> Comments { get; private set; }
         public User Client { get; private set; }
         public User Freelancer { get; private set; }
+        public string  ClientFullName { get; private set; }
+        public string FreelancerFullname { get; private set; }
 
         public void Cancel()
         {
