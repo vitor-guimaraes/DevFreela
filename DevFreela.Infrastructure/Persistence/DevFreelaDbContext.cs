@@ -36,8 +36,6 @@ namespace DevFreela.Infrastructure.Persistence
                     .HasForeignKey(p => p.IdClient)
                     .OnDelete(DeleteBehavior.Restrict);
 
-
-
             modelBuilder.Entity<Skill>()
                     .HasKey(s => s.Id);
 

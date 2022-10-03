@@ -17,9 +17,9 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(string query)
+        public IActionResult Get()
         {
-            var projects = _projectService.GetAll(query);
+            var projects = _projectService.GetAll();
 
             return Ok(projects);
         }

@@ -53,7 +53,7 @@ namespace DevFreela.Application.Services.Implementations
             _dbContext.SaveChanges();
         }
 
-        public List<ProjectViewModel> GetAll(string query)
+        public List<ProjectViewModel> GetAll()
         {
             var projects = _dbContext.Projects;
 
