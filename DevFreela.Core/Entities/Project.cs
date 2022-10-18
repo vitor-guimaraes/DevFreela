@@ -27,8 +27,9 @@ namespace DevFreela.Core.Entities
             Comments = new List<ProjectComment>();
         }
 
-        public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost)
+        public Project(int id, string title, string description, int idClient, int idFreelancer, decimal totalCost)
         {
+            Id = id;
             Title = title;
             Description = description;
             IdClient = idClient;

@@ -326,6 +326,33 @@
           "DevFreela.API.dll": {}
         }
       },
+      "Dapper/2.0.123": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
+          }
+        },
+        "compile": {
+          "lib/net5.0/Dapper.dll": {}
+        }
+      },
+      "Dapper.Database/2.0.0.227": {
+        "dependencies": {
+          "Dapper": "2.0.123",
+          "Microsoft.CSharp": "4.7.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dapper.Database.dll": {
+            "assemblyVersion": "2.0.0.227",
+            "fileVersion": "2.0.0.227"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Dapper.Database.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "runtime": {
           "lib/netstandard2.0/Humanizer.dll": {
@@ -1384,6 +1411,7 @@
       },
       "DevFreela.Application/1.0.0": {
         "dependencies": {
+          "Dapper.Database": "2.0.0.227",
           "DevFreela.Core": "1.0.0",
           "DevFreela.Infrastructure": "1.0.0"
         },
@@ -3108,6 +3136,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
+    },
+    "Dapper.Database/2.0.0.227": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GsEZgaTLBF0y7Hh83ueEkU0Cc6njMghSdsrysIyN5PD4HXTdhypt8N5tJXQ5Rw0RdKTDS2MBYdjsRF1BEOUmJg==",
+      "path": "dapper.database/2.0.0.227",
+      "hashPath": "dapper.database.2.0.0.227.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

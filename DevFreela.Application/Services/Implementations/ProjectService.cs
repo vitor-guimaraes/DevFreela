@@ -17,7 +17,7 @@ namespace DevFreela.Application.Services.Implementations
         }
         public int Create(NewProjectInputModel inputModel)
         {
-            var project = new Project(inputModel.Title, inputModel.Description, inputModel.IdClient, inputModel.IdFreelancer, inputModel.TotalCost);
+            var project = new Project(inputModel.Id, inputModel.Title, inputModel.Description, inputModel.IdClient, inputModel.IdFreelancer, inputModel.TotalCost);
             
             _dbContext.Projects.Add(project);
 
@@ -69,7 +69,7 @@ namespace DevFreela.Application.Services.Implementations
             var project = _dbContext.Projects
                 .Include(p => p.Client)
                 .Include(p => p.Freelancer)
-                .SingleOrDefault(p => p.Id == id);
+                .FirstOrDefault(p => p.Id == id);
 
             if (project == null)
                 return null;
@@ -83,7 +83,7 @@ namespace DevFreela.Application.Services.Implementations
                 project.FinishedAt,
                 project.ClientFullName,
                 project.FreelancerFullname
-                ) ;
+                );
 
             _dbContext.SaveChanges();
 

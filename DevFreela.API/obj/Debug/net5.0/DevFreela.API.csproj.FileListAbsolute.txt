@@ -65,3 +65,5 @@ C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFr
 C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\ref\DevFreela.API.dll
 C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\Dapper.dll
+C:\Users\vitor.guimaraes.GRUPOLTM\Desktop\Dotnet Direto Ao Ponto\DevFreela\DevFreela.API\bin\Debug\net5.0\Dapper.Database.dll

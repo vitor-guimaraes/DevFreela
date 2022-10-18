@@ -1,7 +1,5 @@
 ﻿using DevFreela.Core.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Reflection;
 
 namespace DevFreela.Infrastructure.Persistence
@@ -22,7 +20,8 @@ namespace DevFreela.Infrastructure.Persistence
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             modelBuilder.Entity<Project>()
-                .HasKey(p => p.Id);
+                    .HasKey(p => p.Id);
+                    //.HasValueGenerator<InMemoryIntegerValueGenerator<int>>();
 
             modelBuilder.Entity<Project>()
                     .HasOne(p => p.Freelancer)

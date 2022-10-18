@@ -53,6 +53,9 @@ namespace DevFreela.Application.Services.Implementations
         {
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
 
+            if (user == null)
+                return null;
+
             var usersDetailsViewModel = new UsersDetailsViewModel(
                 user.Id,
                 user.FullName,
