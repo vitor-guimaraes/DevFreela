@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.API\\DevFreela.API.csproj": {}
+    "D:\\Projects\\DevFreela\\DevFreela.API\\DevFreela.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.API\\DevFreela.API.csproj": {
+    "D:\\Projects\\DevFreela\\DevFreela.API\\DevFreela.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.API\\DevFreela.API.csproj",
+        "projectUniqueName": "D:\\Projects\\DevFreela\\DevFreela.API\\DevFreela.API.csproj",
         "projectName": "DevFreela.API",
-        "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.API\\DevFreela.API.csproj",
-        "packagesPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.API\\obj\\",
+        "projectPath": "D:\\Projects\\DevFreela\\DevFreela.API\\DevFreela.API.csproj",
+        "packagesPath": "C:\\Users\\guimv\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\DevFreela\\DevFreela.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vitor.guimaraes.GRUPOLTM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://grupoltm.pkgs.visualstudio.com/e1a66725-8208-4dbd-b855-e2c1261003fb/_packaging/Vertem-Admin/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj": {
-                "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj"
+              "D:\\Projects\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj": {
+                "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj"
               }
             }
           }
@@ -56,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,21 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj": {
+    "D:\\Projects\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj",
+        "projectUniqueName": "D:\\Projects\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj",
         "projectName": "DevFreela.Application",
-        "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj",
-        "packagesPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Application\\obj\\",
+        "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Application\\DevFreela.Application.csproj",
+        "packagesPath": "C:\\Users\\guimv\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\DevFreela\\DevFreela.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vitor.guimaraes.GRUPOLTM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,18 +90,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://grupoltm.pkgs.visualstudio.com/e1a66725-8208-4dbd-b855-e2c1261003fb/_packaging/Vertem-Admin/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
-                "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj"
+              "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
+                "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj"
               },
-              "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj"
+              "D:\\Projects\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj": {
+                "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj"
               }
             }
           }
@@ -115,13 +114,20 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -130,21 +136,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
+    "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
+        "projectUniqueName": "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
         "projectName": "DevFreela.Core",
-        "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
-        "packagesPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\obj\\",
+        "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
+        "packagesPath": "C:\\Users\\guimv\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\DevFreela\\DevFreela.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vitor.guimaraes.GRUPOLTM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,8 +158,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://grupoltm.pkgs.visualstudio.com/e1a66725-8208-4dbd-b855-e2c1261003fb/_packaging/Vertem-Admin/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -176,7 +181,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -185,21 +191,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj": {
+    "D:\\Projects\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj",
+        "projectUniqueName": "D:\\Projects\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj",
         "projectName": "DevFreela.Infrastructure",
-        "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Infrastructure\\obj\\",
+        "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Infrastructure\\DevFreela.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\guimv\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\DevFreela\\DevFreela.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vitor.guimaraes.GRUPOLTM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,15 +213,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://grupoltm.pkgs.visualstudio.com/e1a66725-8208-4dbd-b855-e2c1261003fb/_packaging/Vertem-Admin/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
-                "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj"
+              "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
+                "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj"
               }
             }
           }
@@ -235,7 +240,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -244,7 +250,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

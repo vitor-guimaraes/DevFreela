@@ -33,19 +33,23 @@ namespace DevFreela.Application.Services.Implementations
             user.Remove();
         }
 
-        public List<UsersViewModel> GetAllUsers(string query)
+        public List<UsersViewModel> GetAllUsers()
         {
             var users = _dbContext.Users;
 
             var usersViewModel = users
-                .Select(u => new UsersViewModel(u.FullName, u.Id)).ToList();
+                .Select(u => new UsersViewModel(u.FullName, u.Id))
+                .ToList();
 
             return usersViewModel;
         }
 
         public UsersDetailsViewModel GetById(int id)
         {
-            var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
+            var user = _dbContext.Users.FirstOrDefault(u => u.Id == id);
+
+            if (user == null)
+                return null;
 
             var usersDetailsViewModel = new UsersDetailsViewModel(
                 user.Id,

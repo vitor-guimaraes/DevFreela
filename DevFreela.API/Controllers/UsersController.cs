@@ -31,7 +31,7 @@ namespace DevFreela.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<UsersViewModel> UserList = new List<UsersViewModel>();
+            List<UsersViewModel> UserList = _usersService.GetAllUsers();
             return Ok(UserList);
         }
 

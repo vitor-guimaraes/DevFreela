@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {}
+    "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
+    "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
+        "projectUniqueName": "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
         "projectName": "DevFreela.Core",
-        "projectPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
-        "packagesPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor.guimaraes.GRUPOLTM\\Desktop\\Dotnet Direto Ao Ponto\\DevFreela\\DevFreela.Core\\obj\\",
+        "projectPath": "D:\\Projects\\DevFreela\\DevFreela.Core\\DevFreela.Core.csproj",
+        "packagesPath": "C:\\Users\\guimv\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\DevFreela\\DevFreela.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vitor.guimaraes.GRUPOLTM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://grupoltm.pkgs.visualstudio.com/e1a66725-8208-4dbd-b855-e2c1261003fb/_packaging/Vertem-Admin/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -46,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

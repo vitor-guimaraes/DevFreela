@@ -20,6 +20,8 @@ namespace DevFreela.Application.Services.Implementations
             
             _dbContext.Projects.Add(project);
 
+            //_dbContext.SaveChanges();
+
             return project.Id;
         }
 

@@ -28,6 +28,8 @@ namespace DevFreela.API
             services.AddSingleton<DevFreelaDbContext>();
 
             services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<ISkillService, SkillService>();
 
             services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
 
