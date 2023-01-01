@@ -17,7 +17,10 @@ namespace DevFreela.Application.Services.Implementations
         }
         public int Create(NewProjectInputModel inputModel)
         {
-            var project = new Project(inputModel.Id, inputModel.Title, inputModel.Description, inputModel.IdClient, inputModel.IdFreelancer, inputModel.TotalCost);
+            var project = new Project
+                (inputModel.Id, inputModel.Title, inputModel.Description, 
+                inputModel.IdClient, inputModel.IdFreelancer, 
+                inputModel.TotalCost);
             
             _dbContext.Projects.Add(project);
 
@@ -81,8 +84,8 @@ namespace DevFreela.Application.Services.Implementations
                 project.TotalCost,
                 project.StartedAt,
                 project.FinishedAt,
-                project.ClientFullName,
-                project.FreelancerFullname
+                project.Client.FullName,
+                project.Freelancer.FullName
                 );
 
             _dbContext.SaveChanges();

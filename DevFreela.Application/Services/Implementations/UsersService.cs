@@ -19,7 +19,8 @@ namespace DevFreela.Application.Services.Implementations
 
         public int Create(CreateUsersInputModel inputModel)
         {
-            var user = new User(inputModel.FullName, inputModel.Email, inputModel.BirthDate);
+            var user = new User(inputModel.FullName, inputModel.Email, 
+                inputModel.BirthDate, inputModel.Active);
 
             _dbContext.Users.Add(user);
 
@@ -37,14 +38,12 @@ namespace DevFreela.Application.Services.Implementations
             _dbContext.SaveChanges();
         }
 
-        public List<UsersViewModel> GetAllUsers(string query)
+        public List<UsersViewModel> GetAllUsers()
         {
             var users = _dbContext.Users;
 
             var usersViewModel = users
-                .Select(u => new UsersViewModel(u.FullName, u.Id)).ToList();
-
-            _dbContext.SaveChanges();
+                .Select(u => new UsersViewModel(u.FullName, u.Id, u.Active)).ToList();
 
             return usersViewModel;
         }
@@ -61,10 +60,9 @@ namespace DevFreela.Application.Services.Implementations
                 user.FullName,
                 user.Email,
                 user.OwnedProjects,
-                user.Skills
+                user.Skills,
+                user.Active
                 );
-
-            _dbContext.SaveChanges();
 
             return usersDetailsViewModel;
         }
@@ -73,7 +71,8 @@ namespace DevFreela.Application.Services.Implementations
         {
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == inputModel.Id);
 
-            user.Update(inputModel.Id, inputModel.FullName, inputModel.Email, inputModel.OwnedProjects, inputModel.Skills);
+            user.Update(user.Id, inputModel.FullName, inputModel.Email, 
+                inputModel.OwnedProjects, inputModel.Skills, inputModel.Active) ;
 
             _dbContext.SaveChanges();
         }

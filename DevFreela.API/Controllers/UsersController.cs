@@ -1,4 +1,5 @@
 ﻿using DevFreela.API.Models;
+using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -31,25 +32,34 @@ namespace DevFreela.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            List<UsersViewModel> UserList = new List<UsersViewModel>();
+            var users = _usersService.GetAllUsers();
+
+            List<UsersViewModel> UserList = new List<UsersViewModel>(users);
+
             return Ok(UserList);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateUserModel createUserModel)
+        public IActionResult Post([FromBody] CreateUsersInputModel createUserModel)
         {
-            return CreatedAtAction(nameof(GetById), new { id = 1 }, createUserModel);
+            var id = _usersService.Create(createUserModel);
+
+            return CreatedAtAction(nameof(GetById), new { id = id }, createUserModel);
         }
 
         [HttpPut("{id}/login")]
-        public IActionResult Login(int id, [FromBody] LoginModel login)
+        public IActionResult UpdateUser(int id, [FromBody] UpdateUsersInputModel inputModel)
         {
+            _usersService.Update(inputModel);
+
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            _usersService.Delete(id);
+
             return NoContent();
         }
     }

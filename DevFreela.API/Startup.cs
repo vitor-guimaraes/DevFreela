@@ -30,7 +30,7 @@ namespace DevFreela.API
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<ISkillService, SkillService>();
 
-            //USAR SQL
+            //USAR SQL - VER AULAS DE MIGRATIONS
             //var connectionString = Configuration.GetConnectionString("DevFreelaCs");
             //services.AddDbContext<DevFreelaDbContext>(
             //    options => options.UseSqlServer(connectionString));
