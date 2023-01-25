@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
-=======
 ﻿using DevFreela.Core.Enums;
 using System;
 
