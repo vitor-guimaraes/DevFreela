@@ -10,7 +10,10 @@ namespace DevFreela.Core.Entities
 {
     public class Project : BaseEntity
     {
-        public Project(string title, string description, int idClient, int idFreelancer, decimal totalCost, DateTime? startedAt, DateTime? finishedAt, string clientFullname, string freelancerFullName)
+        public Project(string title, string description, int idClient, 
+                        int idFreelancer, decimal totalCost, 
+                        DateTime? startedAt, DateTime? finishedAt, 
+                        string clientFullname, string freelancerFullName)
         {
             Title = title;
             Description = description;
@@ -25,16 +28,6 @@ namespace DevFreela.Core.Entities
             CreatedAt = DateTime.Now;
             Status = ProjectStatusEnum.Created;
             Comments = new List<ProjectComment>();
-        }
-
-        public Project(int id, string title, string description, int idClient, int idFreelancer, decimal totalCost)
-        {
-            Id = id;
-            Title = title;
-            Description = description;
-            IdClient = idClient;
-            IdFreelancer = idFreelancer;
-            TotalCost = totalCost;
         }
 
         public Project()
@@ -54,7 +47,7 @@ namespace DevFreela.Core.Entities
         public List<ProjectComment> Comments { get; private set; }
         public User Client { get; private set; }
         public User Freelancer { get; private set; }
-        public string  ClientFullName { get; private set; }
+        public string ClientFullName { get; private set; }
         public string FreelancerFullname { get; private set; }
 
         public void Cancel()
@@ -82,11 +75,12 @@ namespace DevFreela.Core.Entities
             }
         }
 
-        public void Update(string title,string description, decimal totalCost)
+        public void Update(string title,string description, decimal totalCost, ProjectStatusEnum status)
         {
             Title = title;
             Description = description;
             TotalCost = totalCost;
+            Status = status;
         }
     }
 }

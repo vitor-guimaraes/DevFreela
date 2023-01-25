@@ -1,24 +1,23 @@
-﻿using System;
+﻿using DevFreela.Core.Enums;
+using System;
 
 namespace DevFreela.Application.ViewModels
 {
     public class ProjectViewModel
     {
-        public ProjectViewModel(string title, DateTime createdAt)
-        {
-            Title = title;
-            CreatedAt = createdAt;
-        }
 
-        public ProjectViewModel(int id, string title, DateTime createdAt)
+        public ProjectViewModel(int id, string title, DateTime createdAt, ProjectStatusEnum status)
         {
             Id = id;
             Title = title;
             CreatedAt = createdAt;
+            Status = status;
         }
 
         public int Id { get; private set; }
         public string Title { get; private set; }
         public DateTime CreatedAt { get; private set; }
+        public ProjectStatusEnum Status { get; private set; }
+
     }
 }

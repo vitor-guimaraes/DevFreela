@@ -1,8 +1,10 @@
 ﻿using DevFreela.API.Models;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
+using DevFreela.Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using System.Collections.Generic;
 
 namespace DevFreela.API.Controllers
 {
@@ -21,7 +23,9 @@ namespace DevFreela.API.Controllers
         {
             var projects = _projectService.GetAll();
 
-            return Ok(projects);
+            List<ProjectViewModel> projectsList = new List<ProjectViewModel>(projects);
+
+            return Ok(projectsList);
         }
 
         [HttpGet("{id}")]
@@ -49,13 +53,15 @@ namespace DevFreela.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = id }, inputModel);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id}")] 
         public IActionResult Put(int id, [FromBody] UpdateProjectInputModel inputModel)
         {
             if (inputModel.Description.Length > 200)
             {
                 return BadRequest();
             }
+
+            inputModel.Id = id;
 
             _projectService.Update(inputModel);
 

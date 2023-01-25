@@ -16,6 +16,16 @@ namespace DevFreela.API.Controllers
             _usersService = usersService;
         }
 
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var users = _usersService.GetAllUsers();
+
+            List<UsersViewModel> userList = new List<UsersViewModel>(users);
+
+            return Ok(userList);
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -25,31 +35,25 @@ namespace DevFreela.API.Controllers
             {
                 return NotFound();
             }
-
-            return Ok(user); ;
+            return Ok(user); 
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var users = _usersService.GetAllUsers();
-
-            List<UsersViewModel> UserList = new List<UsersViewModel>(users);
-
-            return Ok(UserList);
-        }
 
         [HttpPost]
         public IActionResult Post([FromBody] CreateUsersInputModel createUserModel)
         {
             var id = _usersService.Create(createUserModel);
 
-            return CreatedAtAction(nameof(GetById), new { id = id }, createUserModel);
+            return CreatedAtAction(nameof(GetById), 
+                                    new { id = id }, 
+                                    createUserModel);
         }
 
         [HttpPut("{id}/login")]
         public IActionResult UpdateUser(int id, [FromBody] UpdateUsersInputModel inputModel)
         {
+            inputModel.Id = id;
+
             _usersService.Update(inputModel);
 
             return NoContent();

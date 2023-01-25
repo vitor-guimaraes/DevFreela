@@ -5,7 +5,9 @@ namespace DevFreela.Application.ViewModels
 {
     public class UsersDetailsViewModel
     {
-        public UsersDetailsViewModel(int id, string fullName, string email, List<Project> ownedProjects, List<UserSkill> skills, bool active)
+        public UsersDetailsViewModel(int id, string fullName, 
+                                    string email, List<Project> ownedProjects, 
+                                    List<UserSkill> skills, bool active)
         {
             Id = id;
             FullName = fullName;
