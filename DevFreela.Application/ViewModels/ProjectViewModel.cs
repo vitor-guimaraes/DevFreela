@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 =======
 ﻿using DevFreela.Core.Enums;
 using System;
->>>>>>> EFCore
 
 namespace DevFreela.Application.ViewModels
 {
@@ -18,13 +17,7 @@ namespace DevFreela.Application.ViewModels
             CreatedAt = createdAt;
             Status = status;
         }
-
-<<<<<<< HEAD
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-=======
         public int Id { get; private set; }
->>>>>>> EFCore
         public string Title { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public ProjectStatusEnum Status { get; private set; }

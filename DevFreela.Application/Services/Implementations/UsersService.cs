@@ -46,16 +46,10 @@ namespace DevFreela.Application.Services.Implementations
         {
             var users = _dbContext.Users;
 
-<<<<<<< HEAD
-            var usersViewModel = users
-                .Select(u => new UsersViewModel(u.FullName, u.Id))
-                .ToList();
-=======
             var usersViewModel = users.Select(u => new UsersViewModel
                                                                 (u.FullName, 
                                                                 u.Id, 
                                                                 u.Active)).ToList();
->>>>>>> EFCore
 
             return usersViewModel;
         }

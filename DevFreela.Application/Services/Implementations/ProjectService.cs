@@ -28,9 +28,6 @@ namespace DevFreela.Application.Services.Implementations
             
             _dbContext.Projects.Add(project);
 
-<<<<<<< HEAD
-            //_dbContext.SaveChanges();
-=======
             _dbContext.SaveChanges();
 >>>>>>> EFCore
 

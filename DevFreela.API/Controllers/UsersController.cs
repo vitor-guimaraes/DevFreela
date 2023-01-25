@@ -38,16 +38,6 @@ namespace DevFreela.API.Controllers
             return Ok(user); 
         }
 
-<<<<<<< HEAD
-        [HttpGet]
-        public IActionResult Get()
-        {
-            List<UsersViewModel> UserList = _usersService.GetAllUsers();
-            return Ok(UserList);
-        }
-=======
->>>>>>> EFCore
-
         [HttpPost]
         public IActionResult Post([FromBody] CreateUsersInputModel createUserModel)
         {
