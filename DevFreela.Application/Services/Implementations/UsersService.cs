@@ -19,9 +19,16 @@ namespace DevFreela.Application.Services.Implementations
 
         public int Create(CreateUsersInputModel inputModel)
         {
-            var user = new User(inputModel.FullName, inputModel.Email, inputModel.BirthDate);
+            var user = new User(
+                                inputModel.FullName, 
+                                inputModel.Email, 
+                                inputModel.BirthDate, 
+                                inputModel.Active
+                                );
 
             _dbContext.Users.Add(user);
+
+            _dbContext.SaveChanges();
 
             return user.Id;
         }
@@ -31,15 +38,24 @@ namespace DevFreela.Application.Services.Implementations
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == id);
 
             user.Remove();
+
+            _dbContext.SaveChanges();
         }
 
         public List<UsersViewModel> GetAllUsers()
         {
             var users = _dbContext.Users;
 
+<<<<<<< HEAD
             var usersViewModel = users
                 .Select(u => new UsersViewModel(u.FullName, u.Id))
                 .ToList();
+=======
+            var usersViewModel = users.Select(u => new UsersViewModel
+                                                                (u.FullName, 
+                                                                u.Id, 
+                                                                u.Active)).ToList();
+>>>>>>> EFCore
 
             return usersViewModel;
         }
@@ -51,13 +67,17 @@ namespace DevFreela.Application.Services.Implementations
             if (user == null)
                 return null;
 
+            if (user == null)
+                return null;
+
             var usersDetailsViewModel = new UsersDetailsViewModel(
-                user.Id,
-                user.FullName,
-                user.Email,
-                user.OwnedProjects,
-                user.Skills
-                );
+                                        user.Id,
+                                        user.FullName,
+                                        user.Email,
+                                        user.OwnedProjects,
+                                        user.Skills,
+                                        user.Active
+                                        );
 
             return usersDetailsViewModel;
         }
@@ -66,7 +86,11 @@ namespace DevFreela.Application.Services.Implementations
         {
             var user = _dbContext.Users.SingleOrDefault(u => u.Id == inputModel.Id);
 
-            user.Update(inputModel.Id, inputModel.FullName, inputModel.Email, inputModel.OwnedProjects, inputModel.Skills);
+            user.Update(user.Id, inputModel.FullName, 
+                        inputModel.Email, inputModel.OwnedProjects, 
+                        inputModel.Skills, inputModel.Active);
+
+            _dbContext.SaveChanges();
         }
     }
 }

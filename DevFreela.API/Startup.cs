@@ -4,6 +4,7 @@ using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +26,18 @@ namespace DevFreela.API
         {
             services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
 
-            services.AddSingleton<DevFreelaDbContext>();
+            services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<ISkillService, SkillService>();
+
+            //USAR SQL - VER AULAS DE MIGRATIONS
+            //var connectionString = Configuration.GetConnectionString("DevFreelaCs");
+            //services.AddDbContext<DevFreelaDbContext>(
+            //    options => options.UseSqlServer(connectionString));
+
+            //USAR EFCORE INMEMORY
+            services.AddDbContext<DevFreelaDbContext>(
+                options => options.UseInMemoryDatabase("DevFreela"));
 
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IUsersService, UsersService>();
@@ -38,6 +50,8 @@ namespace DevFreela.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevFreela.API", Version = "v1" });
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,5 +10,6 @@ namespace DevFreela.Application.ViewModels
         public string Email { get; set; }
         public List<Project> OwnedProjects { get; set; }
         public List<UserSkill> Skills { get; set; }
+        public bool Active { get; set; }
     }
 }

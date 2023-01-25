@@ -5,8 +5,11 @@ namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
-        public User(string fullName, string email, DateTime birthDate)
-        {
+        public User(string fullName, 
+                    string email, 
+                    DateTime birthDate, 
+                    bool active)
+        {            
             FullName = fullName;
             Email = email;
             BirthDate = birthDate;
@@ -18,14 +21,15 @@ namespace DevFreela.Core.Entities
             FreelanceProjects = new List<Project>();
         }
 
-
         public string FullName { get; private set; }
         public string Email { get; private set; }
         public DateTime BirthDate { get; private set; }
         public DateTime CreatedAt { get; private set; }
-        public List<UserSkill> Skills { get; private set; }
         public bool Active { get; set; }
+        public List<UserSkill> Skills { get; private set; }
         public List<Project> OwnedProjects { get; private set; }
+        public List<Project> FreelanceProjects { get; private set; }
+        public List<ProjectComment> Comments { get; private set; }
 
         public void Remove()
         {
@@ -34,17 +38,16 @@ namespace DevFreela.Core.Entities
                 Active = false;
             }
         }
-
-        public List<Project> FreelanceProjects { get; private set; }
-
-        public void Update(int id, string fullName, string email, List<Project> ownedProjects, List<UserSkill> skills)
+        public void Update
+            (int id, string fullName, string email, 
+            List<Project> ownedProjects, List<UserSkill> skills, bool active)
         {
-            //Id = id;
+            Id = id;
             FullName = fullName;
-            Email = Email;
+            Email = email;
             OwnedProjects = ownedProjects;
             Skills = skills;
-
+            Active = active;
         }
     }
 }
