@@ -8,6 +8,7 @@
 # wget --no-check-certificate http://gist.githubusercontent.com/kmorcinek/2710267/raw/.gitignore
 
 .vs/DevFreela/v16/.suo
+.vs/DevFreela/v17/.suo
 /.vs/DevFreela/FileContentIndex
 /DevFreela.API/bin/Debug/net5.0
 /DevFreela.API/obj/Debug/net5.0/DevFreela.API.MvcApplicationPartsAssemblyInfo.cs
