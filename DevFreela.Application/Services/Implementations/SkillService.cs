@@ -21,30 +21,31 @@ namespace DevFreela.Application.Services.Implementations
             _dbContext = dbContext;
             _connectionString = configuration.GetConnectionString("DevFreelaCs"); //SÓ PRA UTILIZAR O DAPPER
         }
-        public List<SkillViewModel> GetAll()
-        {
-            var skills = _dbContext.Skills;
-
-            var skillsViewModel = skills             
-                .Select(s => new SkillViewModel(s.Id, s.Description))
-                .ToList();
-
-            _dbContext.SaveChanges();
-
-            return skillsViewModel;
-        }      
-
-        //GET ALL DAPPER
         //public List<SkillViewModel> GetAll()
         //{
-        //    using (var sqlConnection = new SqlConnection(_connectionString))
-        //    {
-        //        sqlConnection.Open();
+        //    var skills = _dbContext.Skills;
 
-        //        var script = "SELECT Id, Description FROM Skills";
+        //    var skillsViewModel = skills             
+        //        .Select(s => new SkillViewModel(s.Id, s.Description))
+        //        .ToList();
 
-        //        return sqlConnection.Query<SkillViewModel>(script).ToList();
-        //    }
+        //    _dbContext.SaveChanges();
+
+        //    return skillsViewModel;
         //}
+
+
+        //GET ALL DAPPER
+        public List<SkillViewModel> GetAll()
+        {
+            using (var sqlConnection = new SqlConnection(_connectionString))
+            {
+                sqlConnection.Open();
+
+                var script = "SELECT Id, Description FROM Skills";
+
+                return sqlConnection.Query<SkillViewModel>(script).ToList();
+            }
+        }
     }
 }

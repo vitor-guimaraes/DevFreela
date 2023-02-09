@@ -2,6 +2,7 @@
 using DevFreela.Application.ViewModels;
 using DevFreela.Core.Entities;
 using DevFreela.Infrastructure.Persistence;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,12 @@ namespace DevFreela.Application.Services.Implementations
     {
 
         private readonly DevFreelaDbContext _dbContext;
-        public UsersService(DevFreelaDbContext dbContext)
+        private readonly string _coonectionString;
+
+        public UsersService(DevFreelaDbContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _coonectionString = configuration.GetConnectionString("DevFreelaCs"); //DAPPER
         }
 
         public int Create(CreateUsersInputModel inputModel)
