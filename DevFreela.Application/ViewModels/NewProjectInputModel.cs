@@ -10,7 +10,6 @@ namespace DevFreela.Application.ViewModels
 {
     public class NewProjectInputModel
     {
-        //public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int IdClient { get; set; }

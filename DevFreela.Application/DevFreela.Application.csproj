@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <Folder Include="InputModels\" />
-    <Folder Include="Queries\GetAllSkills\" />
+    <Folder Include="Queries\GetUser\" />
   </ItemGroup>
 
   <ItemGroup>

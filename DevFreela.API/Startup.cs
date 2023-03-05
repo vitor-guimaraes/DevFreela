@@ -29,9 +29,9 @@ namespace DevFreela.API
             //EXCLUIR PARA USAR O MEDIATR
             //services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
 
-            services.AddScoped<IProjectService, ProjectService>();
+            //services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IUsersService, UsersService>();
-            services.AddScoped<ISkillService, SkillService>();
+            //services.AddScoped<ISkillService, SkillService>();
 
             //USAR SQL - VER AULAS DE MIGRATIONS
             //var connectionString = Configuration.GetConnectionString("DevFreelaCs");
@@ -42,9 +42,9 @@ namespace DevFreela.API
             services.AddDbContext<DevFreelaDbContext>(
                 options => options.UseInMemoryDatabase("DevFreela"));
 
-            services.AddScoped<IProjectService, ProjectService>();
+            //services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IUsersService, UsersService>();
-            services.AddScoped<ISkillService, SkillService>();
+            //services.AddScoped<ISkillService, SkillService>();
 
             //EXCLUIR PARA USAR O MEDIATR
             //services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });

@@ -22,7 +22,7 @@ namespace DevFreela.Core.Entities
             TotalCost = totalCost;
             StartedAt = startedAt;
             FinishedAt = finishedAt;
-            ClientFullName = clientFullname;
+            ClientFullname = clientFullname;
             FreelancerFullname = freelancerFullName;
 
             CreatedAt = DateTime.Now;
@@ -47,7 +47,7 @@ namespace DevFreela.Core.Entities
         public List<ProjectComment> Comments { get; private set; }
         public User Client { get; private set; }
         public User Freelancer { get; private set; }
-        public string ClientFullName { get; private set; }
+        public string ClientFullname { get; private set; }
         public string FreelancerFullname { get; private set; }
 
         public void Cancel()

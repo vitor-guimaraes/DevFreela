@@ -16,114 +16,115 @@ namespace DevFreela.Application.Services.Implementations
             _dbContext = dbContext;
         }
 
-        public int Create(NewProjectInputModel inputModel)
-        {
-            var project = new Project
-                        (inputModel.Title, 
-                        inputModel.Description, inputModel.IdClient, 
-                        inputModel.IdFreelancer, inputModel.TotalCost,
-                        inputModel.StartedAt, inputModel.FinishedAt,
-                        inputModel.ClientFullName, inputModel.FreelancerFullname
-                        );
+        //public int Create(NewProjectInputModel inputModel)
+        //{
+        //    var project = new Project
+        //                (inputModel.Title, 
+        //                inputModel.Description, inputModel.IdClient, 
+        //                inputModel.IdFreelancer, inputModel.TotalCost,
+        //                inputModel.StartedAt, inputModel.FinishedAt,
+        //                inputModel.ClientFullName, inputModel.FreelancerFullname
+        //                );
             
-            _dbContext.Projects.Add(project);
+        //    _dbContext.Projects.Add(project);
 
-            _dbContext.SaveChanges();
+        //    _dbContext.SaveChanges();
 
-            return project.Id;
-        }
+        //    return project.Id;
+        //}
 
-        public void CreateComment(CreateCommentInputModel inputModel)
-        {
-            var comment = new ProjectComment(
-                                            inputModel.Content, 
-                                            inputModel.IdProject, 
-                                            inputModel.IdUser);
+        //public void CreateComment(CreateCommentInputModel inputModel)
+        //{
+        //    var comment = new ProjectComment(
+        //                                    inputModel.Content, 
+        //                                    inputModel.IdProject, 
+        //                                    inputModel.IdUser);
 
-            _dbContext.ProjectComments.Add(comment);
+        //    _dbContext.ProjectComments.Add(comment);
 
-            _dbContext.SaveChanges();
-        }
+        //    _dbContext.SaveChanges();
+        //}
 
-        public void Delete(int id)
-        {
-            var project = _dbContext.Projects.
-                            SingleOrDefault(p => p.Id == id);
+        //public void Delete(int id)
+        //{
+        //    var project = _dbContext.Projects.
+        //                    SingleOrDefault(p => p.Id == id);
 
-            project.Cancel();
+        //    project.Cancel();
 
-            _dbContext.SaveChanges();
-        }
+        //    _dbContext.SaveChanges();
+        //}
 
-        public void Finish(int id)
-        {
-            var project = _dbContext.Projects.
-                            SingleOrDefault(p => p.Id == id);
 
-            project.Finish();
+        //public List<ProjectViewModel> GetAll()
+        //{
+        //    var projects = _dbContext.Projects;
 
-            _dbContext.SaveChanges();
-        }
+        //    var projectsViewModel = projects
+        //                            .Select(p => new ProjectViewModel
+        //                                   (p.Id, 
+        //                                    p.Title, 
+        //                                    p.CreatedAt,
+        //                                    p.Status)).ToList();
 
-        public List<ProjectViewModel> GetAll()
-        {
-            var projects = _dbContext.Projects;
+        //    return projectsViewModel;
+        //}
 
-            var projectsViewModel = projects
-                                    .Select(p => new ProjectViewModel
-                                            (p.Id, 
-                                            p.Title, 
-                                            p.CreatedAt,
-                                            p.Status)).ToList();
+        //public ProjectDetailsViewModel GetById(int id)
+        //{
+        //    var project = _dbContext.Projects
+        //        //.Include(p => p.Client)
+        //        //.Include(p => p.Freelancer)
+        //        .SingleOrDefault(p => p.Id == id);
 
-            return projectsViewModel;
-        }
+        //    if (project == null)
+        //        return null;
 
-        public ProjectDetailsViewModel GetById(int id)
-        {
-            var project = _dbContext.Projects
-                //.Include(p => p.Client)
-                //.Include(p => p.Freelancer)
-                .SingleOrDefault(p => p.Id == id);
+        //    var projectsDetailsViewModel = new ProjectDetailsViewModel(
+        //                                        project.Id,
+        //                                        project.Title,
+        //                                        project.Description,
+        //                                        project.TotalCost,
+        //                                        project.StartedAt,
+        //                                        project.FinishedAt,
+        //                                        project.ClientFullName,
+        //                                        project.FreelancerFullname
+        //                                        );
 
-            if (project == null)
-                return null;
+        //    return projectsDetailsViewModel;
+        //}
 
-            var projectsDetailsViewModel = new ProjectDetailsViewModel(
-                                                project.Id,
-                                                project.Title,
-                                                project.Description,
-                                                project.TotalCost,
-                                                project.StartedAt,
-                                                project.FinishedAt,
-                                                project.ClientFullName,
-                                                project.FreelancerFullname
-                                                );
+        //public void Finish(int id)
+        //{
+        //    var project = _dbContext.Projects.
+        //                    SingleOrDefault(p => p.Id == id);
 
-            return projectsDetailsViewModel;
-        }
+        //    project.Finish();
 
-        public void Start(int id)
-        {
-            var project = _dbContext.Projects.
-                            SingleOrDefault(p => p.Id == id);
-                                
-            project.Start();
+        //    _dbContext.SaveChanges();
+        //}
 
-            _dbContext.SaveChanges();
-        }
+        //public void Start(int id)
+        //{
+        //    var project = _dbContext.Projects.
+        //                    SingleOrDefault(p => p.Id == id);
 
-        public void Update(UpdateProjectInputModel inputModel)
-        {
-            var project = _dbContext.Projects.
-                            SingleOrDefault(p => p.Id == inputModel.Id);
+        //    project.Start();
+
+        //    _dbContext.SaveChanges();
+        //}
+
+        //public void Update(UpdateProjectInputModel inputModel)
+        //{
+        //    var project = _dbContext.Projects.
+        //                    SingleOrDefault(p => p.Id == inputModel.Id);
             
-            project.Update(inputModel.Title, 
-                            inputModel.Description, 
-                            inputModel.TotalCost,
-                            inputModel.Status);
+        //    project.Update(inputModel.Title, 
+        //                    inputModel.Description, 
+        //                    inputModel.TotalCost,
+        //                    inputModel.Status);
 
-            _dbContext.SaveChanges();
-        }
+        //    _dbContext.SaveChanges();
+        //}
     }
 }

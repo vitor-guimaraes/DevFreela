@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevFreela.Core.Enums;
+using System;
 
 namespace DevFreela.Application.ViewModels
 {
@@ -7,12 +8,14 @@ namespace DevFreela.Application.ViewModels
         public ProjectDetailsViewModel(int id, string title, 
                                         string description, decimal totalCost, 
                                         DateTime? startedAt, DateTime? finishedAt, 
-                                        string clientFullname, string freelancerFullname)
+                                        ProjectStatusEnum status,string clientFullname, 
+                                        string freelancerFullname)
         {
             Id = id;
             Title = title;
             Description = description;
             TotalCost = totalCost;
+            Status = status;
             StartedAt = startedAt;
             FinishedAt = finishedAt;
             ClientFullname = clientFullname;
@@ -25,6 +28,7 @@ namespace DevFreela.Application.ViewModels
         public decimal TotalCost { get; private set; }
         public DateTime? StartedAt { get; private set; }
         public DateTime? FinishedAt { get; private set; }
+        public ProjectStatusEnum Status { get; private set; }
         public string ClientFullname { get; private set; }
         public string FreelancerFullname { get; private set; }
     }
