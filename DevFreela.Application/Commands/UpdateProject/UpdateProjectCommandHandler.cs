@@ -22,7 +22,7 @@ namespace DevFreela.Application.Commands.UpdateProject
         public async Task<Unit> Handle(UpdateProjectCommand request, CancellationToken cancellationToken)
         {
             var project = _dbContext.Projects.
-                SingleOrDefault(p => p.Id == request.Id);
+                          SingleOrDefault(p => p.Id == request.Id);
 
             project.Update(request.Title,
                             request.Description,

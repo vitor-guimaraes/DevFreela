@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevFreela.Application.Queries.GetProjectById
+namespace DevFreela.Application.Queries.GetUserById
 {
-    public class GetProjectByIdQuery : IRequest<ProjectDetailsViewModel>
+    public class GetUserByIdQuery : IRequest<UsersDetailsViewModel>
     {
-        public GetProjectByIdQuery(int id)
+        public GetUserByIdQuery(int id)
         {
             Id = id;
         }

@@ -1,5 +1,6 @@
 using DevFreela.API.Models;
 using DevFreela.Application.Commands.CreateProject;
+using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Infrastructure.Persistence;
@@ -30,7 +31,7 @@ namespace DevFreela.API
             //services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
 
             //services.AddScoped<IProjectService, ProjectService>();
-            services.AddScoped<IUsersService, UsersService>();
+            //services.AddScoped<IUsersService, UsersService>();
             //services.AddScoped<ISkillService, SkillService>();
 
             //USAR SQL - VER AULAS DE MIGRATIONS
@@ -43,7 +44,7 @@ namespace DevFreela.API
                 options => options.UseInMemoryDatabase("DevFreela"));
 
             //services.AddScoped<IProjectService, ProjectService>();
-            services.AddScoped<IUsersService, UsersService>();
+            //services.AddScoped<IUsersService, UsersService>();
             //services.AddScoped<ISkillService, SkillService>();
 
             //EXCLUIR PARA USAR O MEDIATR
@@ -56,6 +57,7 @@ namespace DevFreela.API
             });
 
             services.AddMediatR(typeof(CreateProjectCommand));
+            services.AddMediatR(typeof(CreateUserCommand));
 
         }
 
