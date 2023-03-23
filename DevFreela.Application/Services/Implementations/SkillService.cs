@@ -12,42 +12,48 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Services.Implementations
 {
-    //public class SkillService : ISkillService
-    //{
+    public class SkillService : ISkillService
+    {
+        private readonly DevFreelaDbContext _dbContext;
+
+        public SkillService (DevFreelaDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
         //MOVIDO PARA O GETALLSKILLSHANDLER
 
-    //    private readonly DevFreelaDbContext _dbContext;
-    //    private readonly string _connectionString;
-    //    public SkillService(DevFreelaDbContext dbContext, IConfiguration configuration)
-    //    {
-    //        _dbContext = dbContext;
-    //        _connectionString = configuration.GetConnectionString("DevFreelaCs"); //SÓ PRA UTILIZAR O DAPPER
-    //    }
-    //    public List<SkillViewModel> GetAll()
-    //    {
-    //        var skills = _dbContext.Skills;
+        //    private readonly DevFreelaDbContext _dbContext;
+        //    private readonly string _connectionString;
+        //    public SkillService(DevFreelaDbContext dbContext, IConfiguration configuration)
+        //    {
+        //        _dbContext = dbContext;
+        //        _connectionString = configuration.GetConnectionString("DevFreelaCs"); //SÓ PRA UTILIZAR O DAPPER
+        //    }
+        //    public List<SkillViewModel> GetAll()
+        //    {
+        //        var skills = _dbContext.Skills;
 
-    //        var skillsViewModel = skills
-    //            .Select(s => new SkillViewModel(s.Id, s.Description))
-    //            .ToList();
+        //        var skillsViewModel = skills
+        //            .Select(s => new SkillViewModel(s.Id, s.Description))
+        //            .ToList();
 
-    //        _dbContext.SaveChanges();
+        //        _dbContext.SaveChanges();
 
-    //        return skillsViewModel;
-    //    }
+        //        return skillsViewModel;
+        //    }
 
-    //    //GET ALL DAPPER
-    //    public List<SkillViewModel> GetAll()
-    //    {
-    //        using (var sqlConnection = new SqlConnection(_connectionString))
-    //        {
-    //            sqlConnection.Open();
+        //    //GET ALL DAPPER
+        //    public List<SkillViewModel> GetAll()
+        //    {
+        //        using (var sqlConnection = new SqlConnection(_connectionString))
+        //        {
+        //            sqlConnection.Open();
 
-    //            var script = "SELECT Id, Description FROM Skills";
+        //            var script = "SELECT Id, Description FROM Skills";
 
-    //            return sqlConnection.Query<SkillViewModel>(script).ToList();
-    //        }
-    //    }
-    //}
+        //            return sqlConnection.Query<SkillViewModel>(script).ToList();
+        //        }
+        //    }
+    }
 }

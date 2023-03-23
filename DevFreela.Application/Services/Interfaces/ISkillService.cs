@@ -1,4 +1,5 @@
 ﻿using DevFreela.Application.ViewModels;
+using DevFreela.Core.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace DevFreela.Application.Services.Interfaces
 {
     public interface ISkillService
     {
-        List<SkillViewModel> GetAll();
+        //List<SkillViewModel> GetAll();
     }
 }
