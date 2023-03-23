@@ -7,7 +7,6 @@ using DevFreela.Application.Commands.UpdateProject;
 using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Application.Queries.GetProjectById;
 using DevFreela.Application.Services.Interfaces;
-using DevFreela.Core.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -29,16 +28,11 @@ namespace DevFreela.API.Controllers
         //    _projectService = projectService;            
         //}
         [HttpGet]
-        public async Task<IActionResult> GetAllProjects(string query)
+        public async Task<IActionResult> GetAllProjects()
         {
-            var getAllProjectsQuery = new GetAllProjectsQuery(query);
+            var getAllProjectsQuery = new GetAllProjectsQuery();
 
             var projects = await _mediator.Send(getAllProjectsQuery);
-
-            if (projects == null)
-            {
-                return NotFound();
-            }
 
             return Ok(projects);
         }

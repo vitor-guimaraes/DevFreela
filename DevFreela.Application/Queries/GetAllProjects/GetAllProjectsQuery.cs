@@ -12,11 +12,11 @@ namespace DevFreela.Application.Queries.GetAllProjects
 {
     public class GetAllProjectsQuery : IRequest<List<ProjectViewModel>>
     {
-        public GetAllProjectsQuery(string query)
+        public GetAllProjectsQuery()
         {
-            Query = query;
+            //Query = query;
         }
-        public string Query { get; private set; }
+        //public string Query { get; private set; }
 
         //public GetAllProjectsQuery(int id, string title, DateTime createdAt, ProjectStatusEnum status)
         //{
@@ -30,6 +30,5 @@ namespace DevFreela.Application.Queries.GetAllProjects
         //public string Title { get; private set; }
         //public DateTime CreatedAt { get; private set; }
         //public ProjectStatusEnum Status { get; private set; }
-
     }
 }

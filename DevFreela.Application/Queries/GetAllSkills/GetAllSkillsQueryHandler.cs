@@ -1,6 +1,4 @@
 ﻿using DevFreela.Application.ViewModels;
-using DevFreela.Core.DTOs;
-using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using MediatR.Pipeline;
@@ -15,14 +13,8 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Queries.GetAllSkills
 {
-    public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillsDTO>>
+    public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
     {
-        private readonly ISkillRepository _skillRepository;
-        public GetAllSkillsQueryHandler(ISkillRepository skillRepository)
-        {
-            _skillRepository = skillRepository;
-        }
-
         private readonly DevFreelaDbContext _dbContext;
         //private readonly string _connectionString;
 
@@ -31,23 +23,17 @@ namespace DevFreela.Application.Queries.GetAllSkills
             _dbContext = dbContext;
             //_connectionString = configuration.GetConnectionString("DevFreelaCs"); //SÓ PRA UTILIZAR O DAPPER
         }
-        public async Task<List<SkillsDTO>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
+        public async Task<List<SkillViewModel>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
         {
-            var skills = await _skillRepository.GetAllSkills();
+                var skills = _dbContext.Skills;
 
-            var skillsDTO = skills
-                .Select(s => new SkillsDTO(s.Id, s.Description))
-                .ToList();
+                var skillsViewModel = await skills
+                    .Select(s => new SkillViewModel(s.Id, s.Description))
+                    .ToListAsync();
 
-            return skillsDTO;
+                _dbContext.SaveChanges();
 
-                //var skills = _dbContext.Skills;
-
-                //var skillsViewModel = await skills
-                //    .Select(s => new SkillDTO(s.Id, s.Description))
-                //    .ToListAsync();
-
-                //return skillsViewModel;
+                return skillsViewModel;
 
             //    //GET ALL DAPPER
             //    public List<SkillViewModel> GetAll()
