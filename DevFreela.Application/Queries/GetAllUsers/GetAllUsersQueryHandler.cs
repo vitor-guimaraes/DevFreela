@@ -1,6 +1,9 @@
 ﻿using DevFreela.Application.Queries.GetUser;
 using DevFreela.Application.ViewModels;
+using DevFreela.Core.Entities;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,27 +15,31 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Queries.GetAllUsers
 {
-    internal class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<UsersViewModel>>
+    public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<User>>
     {
-        private readonly DevFreelaDbContext _dbContext;
-        public GetAllUsersQueryHandler(DevFreelaDbContext dbContext)
+        private readonly IUserRepository _userRepository;
+        public GetAllUsersQueryHandler(IUserRepository userRepository)
         {
-            _dbContext = dbContext;
+            _userRepository = userRepository;
         }
 
-        public Task<List<UsersViewModel>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+        public async Task<List<User>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+        //public Task<List<UsersViewModel>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            var users = _dbContext.Users;
+            return await _userRepository.GetAllUsers();
 
-            var usersViewModel = users.Select(u => new UsersViewModel
-                                                                (u.FullName,
-                                                                 u.Id,
-                                                                 u.Active))
-                                                                .ToListAsync();
+            //MOVIDO PARA USERREPOSITORY
+            //var users = _dbContext.Users;
 
-            return usersViewModel;
+            //var usersViewModel = users.Select(u => new UsersViewModel
+            //                                                    (u.FullName,
+            //                                                     u.Id,
+            //                                                     u.Active))
+            //                                                    .ToListAsync();
 
-            throw new NotImplementedException();
+            //return usersViewModel;
+
+            //throw new NotImplementedException();
         }
     }
 }

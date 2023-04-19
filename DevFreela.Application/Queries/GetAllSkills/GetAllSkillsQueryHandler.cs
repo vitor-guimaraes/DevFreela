@@ -1,4 +1,6 @@
 ﻿using DevFreela.Application.ViewModels;
+using DevFreela.Core.DTOs;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using MediatR.Pipeline;
@@ -13,27 +15,30 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Queries.GetAllSkills
 {
-    public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillViewModel>>
+    public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQuery, List<SkillDTO>>
     {
-        private readonly DevFreelaDbContext _dbContext;
+        private readonly ISkillRepository _skillRepository;
         //private readonly string _connectionString;
 
-        public GetAllSkillsQueryHandler(DevFreelaDbContext dbContext)//, IConfiguration configuration)
+        public GetAllSkillsQueryHandler(ISkillRepository skillRepository)//, IConfiguration configuration)
         {
-            _dbContext = dbContext;
+            _skillRepository = skillRepository;
             //_connectionString = configuration.GetConnectionString("DevFreelaCs"); //SÓ PRA UTILIZAR O DAPPER
         }
-        public async Task<List<SkillViewModel>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
+        public async Task<List<SkillDTO>> Handle(GetAllSkillsQuery request, CancellationToken cancellationToken)
         {
-                var skills = _dbContext.Skills;
+            return await _skillRepository.GetAllSkills();
 
-                var skillsViewModel = await skills
-                    .Select(s => new SkillViewModel(s.Id, s.Description))
-                    .ToListAsync();
+            //IMPLEMENTAÇÂO MOVIDA PARA SKILLREPOSITORY
+                //var skills = _dbContext.Skills;
 
-                _dbContext.SaveChanges();
+                //var skillsViewModel = await skills
+                //    .Select(s => new SkillViewModel(s.Id, s.Description))
+                //    .ToListAsync();
 
-                return skillsViewModel;
+                //_dbContext.SaveChanges();
+
+                //return skillsViewModel;
 
             //    //GET ALL DAPPER
             //    public List<SkillViewModel> GetAll()
@@ -49,7 +54,7 @@ namespace DevFreela.Application.Queries.GetAllSkills
             //            return skills.ToList();
             //        }
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 

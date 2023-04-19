@@ -1,4 +1,5 @@
 ﻿using DevFreela.Application.ViewModels;
+using DevFreela.Core.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,5 @@
 ﻿using DevFreela.Application.ViewModels;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using System;
@@ -12,15 +13,15 @@ namespace DevFreela.Application.Queries.GetUserById
 {
     public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UsersDetailsViewModel>
     {
-        private readonly DevFreelaDbContext _dbContext;
-        public GetUserByIdQueryHandler(DevFreelaDbContext dbContext)
+        private readonly IUserRepository _userRepository;
+        public GetUserByIdQueryHandler(IUserRepository userRepository)
         {
-            _dbContext = dbContext;
+            _userRepository = userRepository;
         }
 
         public async Task<UsersDetailsViewModel> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
-            var user = _dbContext.Users.FirstOrDefault(u => u.Id == request.Id);
+            var user = await _userRepository.GetUserById(request.Id);
 
             if (user == null)
                 return null;

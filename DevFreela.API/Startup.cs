@@ -1,9 +1,12 @@
 using DevFreela.API.Models;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.CreateUser;
+using DevFreela.Application.Queries.GetAllSkills;
 using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace DevFreela.API
 {
@@ -43,10 +47,6 @@ namespace DevFreela.API
             services.AddDbContext<DevFreelaDbContext>(
                 options => options.UseInMemoryDatabase("DevFreela"));
 
-            //services.AddScoped<IProjectService, ProjectService>();
-            //services.AddScoped<IUsersService, UsersService>();
-            //services.AddScoped<ISkillService, SkillService>();
-
             //EXCLUIR PARA USAR O MEDIATR
             //services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
 
@@ -58,6 +58,11 @@ namespace DevFreela.API
 
             services.AddMediatR(typeof(CreateProjectCommand));
             services.AddMediatR(typeof(CreateUserCommand));
+
+            //REGISTRAR INJEÇÃO DE DEPENDENCIA DOS REPOSITORIOS (Refatorando as Queries - Parte 1, ver comentários)
+            services.AddTransient<IProjectRepository, ProjectRepository>();
+            services.AddTransient<ISkillRepository, SkillRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
         }
 

@@ -5,6 +5,14 @@ namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
+        public User(string fullName, int id, bool active)
+        {
+            FullName = fullName;
+            Id = id;
+            Active = active;
+            CreatedAt = DateTime.Now;
+        }
+
         public User(string fullName, 
                     string email, 
                     DateTime birthDate, 

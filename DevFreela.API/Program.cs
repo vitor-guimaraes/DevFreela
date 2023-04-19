@@ -22,5 +22,6 @@ namespace DevFreela.API
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
     }
 }
