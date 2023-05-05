@@ -17,7 +17,6 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
-
         public async Task<List<Project>> GetAllProjects()
         {
             return await _dbContext.Projects.ToListAsync();
@@ -26,6 +25,14 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
         public async Task<Project> GetProjectById(int id)
         {
             return await _dbContext.Projects.SingleOrDefaultAsync(p => p.Id == id);
+        }
+
+        public async Task AddProjectAsync(Project project)
+        {
+
+            await _dbContext.Projects.AddAsync(project);
+
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
