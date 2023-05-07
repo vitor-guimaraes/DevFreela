@@ -25,7 +25,7 @@ namespace DevFreela.Application.Commands.FinishProject
 
             project.Finish();
 
-            await _projectRepository.StartProjectAsync(project);
+            await _projectRepository.FinishProjectAsync(project);
 
             return Unit.Value;
         }
