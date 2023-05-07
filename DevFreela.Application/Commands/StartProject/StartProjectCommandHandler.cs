@@ -1,4 +1,5 @@
-﻿using DevFreela.Core.Repositories;
+﻿using DevFreela.Core.Entities;
+using DevFreela.Core.Repositories;
 using DevFreela.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +22,11 @@ namespace DevFreela.Application.Commands.StartProject
 
         public async Task<Unit> Handle(StartProjectCommand request, CancellationToken cancellationToken)
         {
-            await _projectRepository.StartProjectAsync(request.Id);
+            var project = await _projectRepository.GetProjectById(request.Id);
+
+            project.Start();
+
+            await _projectRepository.StartProjectAsync(project);
 
             return Unit.Value;
         }

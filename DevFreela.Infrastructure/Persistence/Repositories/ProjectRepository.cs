@@ -35,16 +35,9 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task StartProjectAsync(int id)
+        public async Task StartProjectAsync(Project project)
         {
-            var project = await _dbContext.Projects.
-                    SingleOrDefaultAsync(p => p.Id == id);
-
-            project.Start();
-
             await _dbContext.SaveChangesAsync();
-
-            //throw new NotImplementedException();
         }
     }
 }
