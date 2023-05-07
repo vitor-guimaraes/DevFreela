@@ -10,5 +10,6 @@ namespace DevFreela.Core.Repositories
         Task<Project> GetProjectById(int id);
         Task AddProjectAsync(Project project);
         Task StartProjectAsync(Project project);
+        Task UpdateProjectAsync(Project project);
     }
 }
