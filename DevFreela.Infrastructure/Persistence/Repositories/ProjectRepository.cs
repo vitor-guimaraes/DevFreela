@@ -1,5 +1,6 @@
 ﻿using DevFreela.Core.Entities;
 using DevFreela.Core.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -29,10 +30,21 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
 
         public async Task AddProjectAsync(Project project)
         {
-
             await _dbContext.Projects.AddAsync(project);
 
             await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task StartProjectAsync(int id)
+        {
+            var project = await _dbContext.Projects.
+                    SingleOrDefaultAsync(p => p.Id == id);
+
+            project.Start();
+
+            await _dbContext.SaveChangesAsync();
+
+            //throw new NotImplementedException();
         }
     }
 }
