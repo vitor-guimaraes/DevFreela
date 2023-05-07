@@ -11,5 +11,6 @@ namespace DevFreela.Core.Repositories
         Task AddProjectAsync(Project project);
         Task StartProjectAsync(Project project);
         Task UpdateProjectAsync(Project project);
+        Task FinishProjectAsync(Project project);
     }
 }
