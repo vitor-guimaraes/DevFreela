@@ -1,5 +1,4 @@
-﻿
-using DevFreela.Application.Commands.CreateCommand;
+﻿using DevFreela.Application.Commands.CreateCommand;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.DeleteProject;
 using DevFreela.Application.Commands.FinishProject;
@@ -10,6 +9,7 @@ using DevFreela.Application.Queries.GetProjectById;
 using DevFreela.Application.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers
