@@ -1,4 +1,7 @@
-﻿using DevFreela.Infrastructure.Persistence;
+﻿using DevFreela.Core.Entities;
+using DevFreela.Core.Repositories;
+using DevFreela.Infrastructure.Persistence;
+using DevFreela.Infrastructure.Persistence.Repositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,24 +15,23 @@ namespace DevFreela.Application.Commands.UpdateUser
 {
     internal class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, Unit>
     {
-        private readonly DevFreelaDbContext _dbContext;
-        public UpdateUserCommandHandler(DevFreelaDbContext dbContext)
+        private readonly IUserRepository _userRepository;
+        public UpdateUserCommandHandler(IUserRepository userRepository)
         {
-            _dbContext = dbContext;
+            _userRepository = userRepository;
         }
         public async Task<Unit> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            var user = await _dbContext.Users.SingleOrDefaultAsync(u => u.Id == request.Id);
+            var user = await _userRepository.GetUserById(request.Id);
 
             user.Update(request.Id, request.FullName,
                         request.Email, request.OwnedProjects,
                         request.Skills, request.Active);
 
-            await _dbContext.SaveChangesAsync();
+            await _userRepository.UpdateUserAsync(user);
+
 
             return Unit.Value;
-
-            throw new NotImplementedException();
         }
     }
 }

@@ -33,6 +33,8 @@ namespace DevFreela.API
         {
             //EXCLUIR PARA USAR O MEDIATR
             //services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
+            //services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
+
 
             //services.AddScoped<IProjectService, ProjectService>();
             //services.AddScoped<IUsersService, UsersService>();
@@ -47,8 +49,6 @@ namespace DevFreela.API
             services.AddDbContext<DevFreelaDbContext>(
                 options => options.UseInMemoryDatabase("DevFreela"));
 
-            //EXCLUIR PARA USAR O MEDIATR
-            //services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -63,6 +63,7 @@ namespace DevFreela.API
             services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<ISkillRepository, SkillRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+
 
         }
 
