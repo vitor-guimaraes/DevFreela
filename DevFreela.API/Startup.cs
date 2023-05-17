@@ -1,3 +1,4 @@
+using DevFreela.API.Filters;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Application.Validators;
@@ -47,7 +48,7 @@ namespace DevFreela.API
                 options => options.UseInMemoryDatabase("DevFreela"));
 
 
-            services.AddControllers()
+            services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
 
             services.AddSwaggerGen(c =>
