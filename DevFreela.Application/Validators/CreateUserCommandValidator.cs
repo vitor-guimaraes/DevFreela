@@ -16,6 +16,11 @@ namespace DevFreela.Application.Validators
             RuleFor(p => p.Password)
                 .Must(ValidPassword)
                 .WithMessage("8 caracteres, min mai, num, alfa num");
+
+            RuleFor(p => p.Fullname)
+                .NotEmpty()
+                .NotNull()
+                .WithMessage("Nome obrigatório");
         }
 
         public bool ValidPassword(string password)

@@ -10,6 +10,7 @@ using DevFreela.Application.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DevFreela.API.Controllers
@@ -67,9 +68,14 @@ namespace DevFreela.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
         {
-            if (command.Title.Length > 50)
+            if (!ModelState.IsValid)
             {
-                return BadRequest(); 
+                var messages = ModelState
+                               .SelectMany(ms => ms.Value.Errors)
+                               .Select(e => e.ErrorMessage)
+                               .ToList();
+
+                return BadRequest(messages);
             }
 
             //var id = _projectService.Create(inputModel);
