@@ -28,8 +28,9 @@ namespace DevFreela.Application.Queries.GetUserById
 
             var usersDetailsViewModel = new UsersDetailsViewModel(
                                         user.Id,
-                                        user.FullName,
+                                        user.Fullname,
                                         user.Email,
+                                        user.Password,
                                         user.OwnedProjects,
                                         user.Skills,
                                         user.Active

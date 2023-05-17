@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace DevFreela.Application.Queries.GetAllUsers
 {
-    public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<User>>
+    public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<UsersViewModel>>
     {
         private readonly IUserRepository _userRepository;
         public GetAllUsersQueryHandler(IUserRepository userRepository)
@@ -23,16 +23,25 @@ namespace DevFreela.Application.Queries.GetAllUsers
             _userRepository = userRepository;
         }
 
-        public async Task<List<User>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+        public async Task<List<UsersViewModel>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         //public Task<List<UsersViewModel>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
         {
-            return await _userRepository.GetAllUsers();
+            var users = await _userRepository.GetAllUsers();
+
+            var usersViewModel = users.Select
+                                           (u => new UsersViewModel
+                                           (u.Fullname,
+                                            u.Id,
+                                            u.Active)
+                                           ).ToList();
+
+            return usersViewModel;
 
             //MOVIDO PARA USERREPOSITORY
             //var users = _dbContext.Users;
 
             //var usersViewModel = users.Select(u => new UsersViewModel
-            //                                                    (u.FullName,
+            //                                                    (u.Fullname,
             //                                                     u.Id,
             //                                                     u.Active))
             //                                                    .ToListAsync();

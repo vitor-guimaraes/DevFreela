@@ -16,8 +16,9 @@ namespace DevFreela.Application.Commands.UpdateUser
         }
 
         public int Id { get; set; }
-        public string FullName { get; set; }
+        public string Fullname { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public List<Project> OwnedProjects { get; set; }
         public List<UserSkill> Skills { get; set; }
         public bool Active { get; set; }

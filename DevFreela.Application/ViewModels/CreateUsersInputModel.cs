@@ -6,7 +6,7 @@ namespace DevFreela.Application.ViewModels
 {
     public class CreateUsersInputModel
     {
-        public string FullName { get; set; }
+        public string Fullname { get; set; }
         public string Email { get; set; }
         public DateTime BirthDate { get; set; }
         public bool Active { get; set; }

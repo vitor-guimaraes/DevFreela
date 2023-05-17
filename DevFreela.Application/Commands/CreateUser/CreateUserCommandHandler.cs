@@ -26,8 +26,9 @@ namespace DevFreela.Application.Commands.CreateUser
         {
 
             var user = new User(
-                                request.FullName,
+                                request.Fullname,
                                 request.Email,
+                                request.Password,
                                 request.BirthDate,
                                 request.Active
                                 );

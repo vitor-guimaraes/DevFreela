@@ -20,7 +20,7 @@ namespace DevFreela.Application.Services.Implementations
         //public int Create(CreateUsersInputModel inputModel)
         //{
         //    var user = new User(
-        //                        inputModel.FullName, 
+        //                        inputModel.Fullname, 
         //                        inputModel.Email, 
         //                        inputModel.BirthDate, 
         //                        inputModel.Active
@@ -47,7 +47,7 @@ namespace DevFreela.Application.Services.Implementations
         //    var users = _dbContext.Users;
 
         //    var usersViewModel = users.Select(u => new UsersViewModel
-        //                                                        (u.FullName, 
+        //                                                        (u.Fullname, 
         //                                                        u.Id, 
         //                                                        u.Active)).ToList();
 
@@ -63,7 +63,7 @@ namespace DevFreela.Application.Services.Implementations
 
         //    var usersDetailsViewModel = new UsersDetailsViewModel(
         //                                user.Id,
-        //                                user.FullName,
+        //                                user.Fullname,
         //                                user.Email,
         //                                user.OwnedProjects,
         //                                user.Skills,
@@ -77,7 +77,7 @@ namespace DevFreela.Application.Services.Implementations
         //{
         //    var user = _dbContext.Users.SingleOrDefault(u => u.Id == inputModel.Id);
 
-        //    user.Update(user.Id, inputModel.FullName, 
+        //    user.Update(user.Id, inputModel.Fullname, 
         //                inputModel.Email, inputModel.OwnedProjects, 
         //                inputModel.Skills, inputModel.Active);
 

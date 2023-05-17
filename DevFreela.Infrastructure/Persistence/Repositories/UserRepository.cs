@@ -26,7 +26,7 @@ namespace DevFreela.Infrastructure.Persistence.Repositories
                 var users = _dbContext.Users;
 
                 var usersViewModel = users.Select(u => new User
-                                                               (u.FullName,
+                                                               (u.Fullname,
                                                                 u.Id,
                                                                 u.Active))
                                                                 .ToListAsync();

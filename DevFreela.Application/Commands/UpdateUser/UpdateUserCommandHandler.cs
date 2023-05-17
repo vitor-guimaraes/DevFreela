@@ -24,12 +24,11 @@ namespace DevFreela.Application.Commands.UpdateUser
         {
             var user = await _userRepository.GetUserById(request.Id);
 
-            user.Update(request.Id, request.FullName,
-                        request.Email, request.OwnedProjects,
+            user.Update(request.Id, request.Fullname,
+                        request.Email, request.Password, request.OwnedProjects,
                         request.Skills, request.Active);
 
             await _userRepository.UpdateUserAsync(user);
-
 
             return Unit.Value;
         }

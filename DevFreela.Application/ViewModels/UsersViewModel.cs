@@ -2,14 +2,14 @@
 {
     public class UsersViewModel
     {
-        public UsersViewModel(string fullName, int id, bool active)
+        public UsersViewModel(string fullname, int id, bool active)
         {
-            FullName = fullName;
+            Fullname = fullname;
             Id = id;
             Active = active;
         }
 
-        public string FullName { get; private set; }
+        public string Fullname { get; private set; }
         public int Id { get; private set; }
         public bool Active { get; private set; }
     }

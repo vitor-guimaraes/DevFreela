@@ -129,7 +129,7 @@ namespace DevFreela.Infrastructure.Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Fullname")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

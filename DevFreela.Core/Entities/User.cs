@@ -1,25 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DevFreela.Core.Entities
 {
     public class User : BaseEntity
     {
-        public User(string fullName, int id, bool active)
+        public User(string fullname, int id, bool active)
         {
-            FullName = fullName;
+            Fullname = fullname;
             Id = id;
             Active = active;
             CreatedAt = DateTime.Now;
         }
 
-        public User(string fullName, 
-                    string email, 
+        public User(string fullname, 
+                    string email,
+                    string password,
                     DateTime birthDate, 
                     bool active)
         {            
-            FullName = fullName;
+            Fullname = fullname;
             Email = email;
+            Password = password;
             BirthDate = birthDate;
             Active = true;
 
@@ -29,8 +32,9 @@ namespace DevFreela.Core.Entities
             FreelanceProjects = new List<Project>();
         }
 
-        public string FullName { get; private set; }
+        public string Fullname { get; private set; }
         public string Email { get; private set; }
+        public string Password { get; private set; }
         public DateTime BirthDate { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public bool Active { get; set; }
@@ -47,12 +51,13 @@ namespace DevFreela.Core.Entities
             }
         }
         public void Update
-            (int id, string fullName, string email, 
+            (int id, string fullname, string email, string password, 
             List<Project> ownedProjects, List<UserSkill> skills, bool active)
         {
             Id = id;
-            FullName = fullName;
+            Fullname = fullname;
             Email = email;
+            Password = password;
             OwnedProjects = ownedProjects;
             Skills = skills;
             Active = active;
