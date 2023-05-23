@@ -22,5 +22,7 @@ namespace DevFreela.Application.Commands.UpdateUser
         public List<Project> OwnedProjects { get; set; }
         public List<UserSkill> Skills { get; set; }
         public bool Active { get; set; }
+        public string Role { get; set; }
+
     }
 }

@@ -14,17 +14,16 @@ namespace DevFreela.Core.Entities
             CreatedAt = DateTime.Now;
         }
 
-        public User(string fullname, 
-                    string email,
-                    string password,
-                    DateTime birthDate, 
-                    bool active)
+        public User(string fullname, string email,
+                    string password, DateTime birthDate, 
+                    bool active, string role)
         {            
             Fullname = fullname;
             Email = email;
             Password = password;
             BirthDate = birthDate;
             Active = true;
+            Role = role;
 
             CreatedAt = DateTime.Now;
             Skills = new List<UserSkill>();
@@ -37,6 +36,7 @@ namespace DevFreela.Core.Entities
         public string Password { get; private set; }
         public DateTime BirthDate { get; private set; }
         public DateTime CreatedAt { get; private set; }
+        public string Role { get; private set; }
         public bool Active { get; set; }
         public List<UserSkill> Skills { get; private set; }
         public List<Project> OwnedProjects { get; private set; }
@@ -52,7 +52,7 @@ namespace DevFreela.Core.Entities
         }
         public void Update
             (int id, string fullname, string email, string password, 
-            List<Project> ownedProjects, List<UserSkill> skills, bool active)
+            List<Project> ownedProjects, List<UserSkill> skills, bool active, string role)
         {
             Id = id;
             Fullname = fullname;
@@ -61,6 +61,7 @@ namespace DevFreela.Core.Entities
             OwnedProjects = ownedProjects;
             Skills = skills;
             Active = active;
+            Role = role;
         }
     }
 }

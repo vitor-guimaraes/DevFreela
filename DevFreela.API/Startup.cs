@@ -3,6 +3,8 @@ using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Application.Validators;
 using DevFreela.Core.Repositories;
+using DevFreela.Core.Services;
+using DevFreela.Infrastructure.Authentication;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using FluentValidation.AspNetCore;
@@ -33,19 +35,17 @@ namespace DevFreela.API
             //services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
             //services.AddScoped<ExampleClass>(e => new ExampleClass { Name = "Initial Stage" });
 
-
             //services.AddScoped<IProjectService, ProjectService>();
             //services.AddScoped<IUsersService, UsersService>();
             //services.AddScoped<ISkillService, SkillService>();
 
             //USAR SQL - VER AULAS DE MIGRATIONS
-            //var connectionString = Configuration.GetConnectionString("DevFreelaCs");
-            //services.AddDbContext<DevFreelaDbContext>(
-            //    options => options.UseSqlServer(connectionString));
+            var connectionString = Configuration.GetConnectionString("DevFreelaCs");
+            services.AddDbContext<DevFreelaDbContext>(options => options.UseSqlServer(connectionString));
 
             //USAR EFCORE INMEMORY
-            services.AddDbContext<DevFreelaDbContext>(
-                options => options.UseInMemoryDatabase("DevFreela"));
+            //services.AddDbContext<DevFreelaDbContext>(
+            //    options => options.UseInMemoryDatabase("DevFreela"));
 
 
             services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
@@ -63,7 +63,7 @@ namespace DevFreela.API
             services.AddTransient<IProjectRepository, ProjectRepository>();
             services.AddTransient<ISkillRepository, SkillRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
-
+            services.AddScoped<IAuthService, AuthService>();
 
         }
 

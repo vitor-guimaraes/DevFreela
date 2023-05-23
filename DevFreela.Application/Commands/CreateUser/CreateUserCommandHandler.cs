@@ -30,7 +30,8 @@ namespace DevFreela.Application.Commands.CreateUser
                                 request.Email,
                                 request.Password,
                                 request.BirthDate,
-                                request.Active
+                                request.Active,
+                                request.Role
                                 );
 
             await _userRepository.AddUserAsync(user);

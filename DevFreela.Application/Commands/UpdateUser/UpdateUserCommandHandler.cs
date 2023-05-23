@@ -26,7 +26,7 @@ namespace DevFreela.Application.Commands.UpdateUser
 
             user.Update(request.Id, request.Fullname,
                         request.Email, request.Password, request.OwnedProjects,
-                        request.Skills, request.Active);
+                        request.Skills, request.Active, request.Role);
 
             await _userRepository.UpdateUserAsync(user);
 
