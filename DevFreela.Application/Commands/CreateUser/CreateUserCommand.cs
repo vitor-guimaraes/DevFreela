@@ -17,6 +17,5 @@ namespace DevFreela.Application.Commands.CreateUser
         public bool Active { get; set; }
         public string Role { get; set; }
 
-
     }
 }
