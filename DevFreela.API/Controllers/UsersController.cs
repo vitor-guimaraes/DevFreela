@@ -2,6 +2,7 @@
 using DevFreela.Application.Commands.CreateUser;
 using DevFreela.Application.Commands.DeleteProject;
 using DevFreela.Application.Commands.DeleteUser;
+using DevFreela.Application.Commands.LoginUser;
 using DevFreela.Application.Commands.UpdateUser;
 using DevFreela.Application.Queries.GetAllProjects;
 using DevFreela.Application.Queries.GetUser;
@@ -120,5 +121,18 @@ namespace DevFreela.API.Controllers
 
         //    return NoContent();
         //}
+
+        [HttpPut("login")]
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
+        {
+            var loginUserViewModel = await _mediator.Send(command);
+
+            if (loginUserViewModel == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(loginUserViewModel);
+        }
     }
 }
