@@ -11,6 +11,7 @@ using DevFreela.Application.Services.Implementations;
 using DevFreela.Application.Services.Interfaces;
 using DevFreela.Application.ViewModels;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 namespace DevFreela.API.Controllers
 {
     [Route("api/users")]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly IUsersService _usersService;
@@ -53,6 +55,7 @@ namespace DevFreela.API.Controllers
         //}
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetUserById(int id)
         {
             var getUserById = new GetUserByIdQuery(id);
@@ -73,6 +76,7 @@ namespace DevFreela.API.Controllers
         //}
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task <IActionResult>CreateUser([FromBody] CreateUserCommand command)
         {
             var id = await _mediator.Send(command);
@@ -123,6 +127,7 @@ namespace DevFreela.API.Controllers
         //}
 
         [HttpPut("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
             var loginUserViewModel = await _mediator.Send(command);

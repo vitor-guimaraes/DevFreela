@@ -131,6 +131,8 @@ namespace DevFreela.API
 
             app.UseRouting();
 
+            //NESSA ORDEM
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
