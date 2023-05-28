@@ -30,6 +30,13 @@ namespace DevFreela.Core.Entities
             Comments = new List<ProjectComment>();
         }
 
+        public Project(string title, string description, int idClient,
+                        int idFreelancer, decimal totalCost)
+        {
+            CreatedAt = DateTime.Now;
+            Status = ProjectStatusEnum.Created;
+            Comments = new List<ProjectComment>();
+        }
         public Project()
         {
 
