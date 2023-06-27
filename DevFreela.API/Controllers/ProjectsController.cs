@@ -32,6 +32,7 @@ namespace DevFreela.API.Controllers
         //    _projectService = projectService;            
         //}
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAllProjects()
         {
             var getAllProjectsQuery = new GetAllProjectsQuery();
@@ -53,6 +54,7 @@ namespace DevFreela.API.Controllers
         //}
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetById(int id)
         {
             //var project = _projectService.GetById(id);
@@ -68,6 +70,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Post([FromBody] CreateProjectCommand command)
         {
             //var id = _projectService.Create(inputModel);
@@ -76,7 +79,8 @@ namespace DevFreela.API.Controllers
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
         }
 
-        [HttpPut("{id}")] 
+        [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult>Put(int id, [FromBody] UpdateProjectCommand command)
         {
             if (command.Description.Length > 200)
@@ -93,6 +97,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         //public IActionResult Delete(int id)
         {
@@ -105,6 +110,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPost("{id}/comments")]
+        [Authorize]
         public async Task<IActionResult> PostComment(int id, [FromBody] CreateCommentCommand command)
         //public IActionResult PostComment(int id, [FromBody])
         {
@@ -115,6 +121,7 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPut("{id}/start")]
+        [Authorize]
         public async Task<IActionResult> Start(int id)
         //public IActionResult Start(int id)
         {
@@ -127,10 +134,19 @@ namespace DevFreela.API.Controllers
         }
 
         [HttpPut("{id}/finish")]
-        public async Task<IActionResult> Finish(int id)
+        [Authorize]
+        public async Task<IActionResult> Finish(int id, [FromBody] FinishProjectCommand command)
         //public IActionResult Finish(int id)
         {
-            var command = new FinishProjectCommand(id);
+            command.Id = id;
+
+            var result = await _mediator.Send(command);
+
+            if (!result)
+            {
+                return BadRequest("sem pagamento");
+            }
+            //var command = new FinishProjectCommand(id);
 
             //_projectService.Finish(id);
             await _mediator.Send(command);

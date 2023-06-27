@@ -14,7 +14,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Infrastructure", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.Application", "DevFreela.Application\DevFreela.Application.csproj", "{5B1ACE59-0742-4FE2-8A44-D6440E6058B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.UnitTests", "DevFreela.UnitTests\DevFreela.UnitTests.csproj", "{C4BD0FB7-9C4A-4F63-B805-82465CF3CF0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevFreela.UnitTests", "DevFreela.UnitTests\DevFreela.UnitTests.csproj", "{C4BD0FB7-9C4A-4F63-B805-82465CF3CF0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFreela.Payments.API", "DevFreela.Payments.API\DevFreela.Payments.API.csproj", "{FD859846-02B2-4E88-AAA3-B258594E4F17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{C4BD0FB7-9C4A-4F63-B805-82465CF3CF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4BD0FB7-9C4A-4F63-B805-82465CF3CF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4BD0FB7-9C4A-4F63-B805-82465CF3CF0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD859846-02B2-4E88-AAA3-B258594E4F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD859846-02B2-4E88-AAA3-B258594E4F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD859846-02B2-4E88-AAA3-B258594E4F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD859846-02B2-4E88-AAA3-B258594E4F17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

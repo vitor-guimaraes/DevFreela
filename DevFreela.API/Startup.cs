@@ -50,6 +50,7 @@ namespace DevFreela.API
             //services.AddDbContext<DevFreelaDbContext>(
             //    options => options.UseInMemoryDatabase("DevFreela"));
 
+            services.AddHttpClient();
 
             services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateUserCommandValidator>());
