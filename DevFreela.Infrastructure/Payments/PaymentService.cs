@@ -1,7 +1,7 @@
 ﻿using DevFreela.Core.DTOs;
 using DevFreela.Core.Services;
 using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
+using System.Text.Json;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +20,6 @@ namespace DevFreela.Infrastructure.Payments
         public async Task<bool> ProcessPayment(PaymentInfoDTO paymentInfoDTO)
         {
             var url = $"{_paymentsBaseUrl}/api/payments";
-            //object paymentInfoJson = JsonSerializer.Serialize(paymentInfoDTO, paymentInfoDTO.GetType());
             var paymentInfoJson = JsonSerializer.Serialize(paymentInfoDTO);
 
             var paymentInfoContent = new StringContent(
