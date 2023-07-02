@@ -20,6 +20,7 @@ namespace DevFreela.Infrastructure.Payments
         public async Task<bool> ProcessPayment(PaymentInfoDTO paymentInfoDTO)
         {
             var url = $"{_paymentsBaseUrl}/api/payments";
+
             var paymentInfoJson = JsonSerializer.Serialize(paymentInfoDTO);
 
             var paymentInfoContent = new StringContent(

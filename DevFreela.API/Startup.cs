@@ -5,6 +5,7 @@ using DevFreela.Application.Validators;
 using DevFreela.Core.Repositories;
 using DevFreela.Core.Services;
 using DevFreela.Infrastructure.Authentication;
+using DevFreela.Infrastructure.Payments;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Persistence.Repositories;
 using FluentValidation.AspNetCore;
@@ -64,6 +65,9 @@ namespace DevFreela.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DevFreela.API", Version = "v1" });
 
+                c.SwaggerDoc("v2", new OpenApiInfo { Title = "DevFreela.Payments.API", Version = "v2" });
+
+
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -116,7 +120,9 @@ namespace DevFreela.API
             services.AddTransient<ISkillRepository, SkillRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddScoped<IAuthService, AuthService>();
-        }        
+            services.AddScoped<IPaymentService, PaymentService>();
+
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

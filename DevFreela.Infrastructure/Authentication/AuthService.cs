@@ -66,6 +66,8 @@ namespace DevFreela.Infrastructure.Authentication
             var stringToken = tokenHandler.WriteToken(token);  
 
             return stringToken;
+            // EXEMPLO DE AUTORIZAÇÃO:
+            //"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9noq4xyIXElTyHAI"
         }
     }
 }
