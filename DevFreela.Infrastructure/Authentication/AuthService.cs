@@ -67,7 +67,7 @@ namespace DevFreela.Infrastructure.Authentication
 
             return stringToken;
             // EXEMPLO DE AUTORIZAÇÃO:
-            //"Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9noq4xyIXElTyHAI"
+            //Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9noq4xyIXElTyHAI
         }
     }
 }

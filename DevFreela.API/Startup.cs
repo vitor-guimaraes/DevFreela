@@ -1,10 +1,12 @@
 using DevFreela.API.Filters;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Commands.CreateUser;
+using DevFreela.Application.Consumers;
 using DevFreela.Application.Validators;
 using DevFreela.Core.Repositories;
 using DevFreela.Core.Services;
 using DevFreela.Infrastructure.Authentication;
+using DevFreela.Infrastructure.MessageBus;
 using DevFreela.Infrastructure.Payments;
 using DevFreela.Infrastructure.Persistence;
 using DevFreela.Infrastructure.Persistence.Repositories;
@@ -120,7 +122,10 @@ namespace DevFreela.API
             services.AddTransient<ISkillRepository, SkillRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddScoped<IAuthService, AuthService>();
+
             services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IMessageBusService, MessageBusService>();
+            services.AddHostedService<PaymentApprovedConsumer>();
 
         }
 
